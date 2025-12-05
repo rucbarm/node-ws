@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辛弃疾诗词选集</title>
+    <style>
+        body {
+            font-family: 'STKaiti', 'KaiTi', '楷体', serif;
+            background-color: #f8f3e6;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d9c7a7' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+            color: #5c3d1e;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 253, 248, 0.95);
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.15);
+            border: 1px solid #e8d5b5;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #8b0000;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(139, 0, 0, 0.1);
+            letter-spacing: 4px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #a52a2a;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        .poem {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #fffdf8;
+            border-left: 5px solid #b22222;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .poem:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d9c7a7, transparent);
+        }
+        
+        .poem:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(139, 69, 19, 0.1);
+        }
+        
+        .poem-title {
+            font-size: 1.6em;
+            color: #8b0000;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        
+        .poem-content {
+            font-size: 1.25em;
+            color: #5c3d1e;
+            white-space: pre-line;
+            text-align: center;
+            line-height: 2;
+        }
+        
+        .poem-remark {
+            font-size: 0.95em;
+            color: #8b5a2b;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        .intro {
+            background-color: #f9f4e9;
+            padding: 25px;
+            border-radius: 5px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #8b4513;
+            border: 1px solid #e8d5b5;
+            position: relative;
+        }
+        
+        .intro:before, .intro:after {
+            content: "❧";
+            position: absolute;
+            top: 10px;
+            font-size: 1.5em;
+            color: #b22222;
+        }
+        
+        .intro:before {
+            left: 15px;
+        }
+        
+        .intro:after {
+            right: 15px;
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>辛弃疾诗词选集</h1>
+        <p class="subtitle">南宋爱国词人 · 稼轩居士</p>
+        
+        <div class="intro">
+            <p>辛弃疾（1140－1207），字幼安，号稼轩居士，南宋著名爱国词人。其词风豪放激昂，充满爱国情怀，被誉为"词中之龙"。</p>
+        </div>
+        
+        <div class="poem">
+            <div class="poem-title">永遇乐·京口北固亭怀古</div>
+            <div class="poem-content">千古江山，英雄无觅，孙仲谋处。
+舞榭歌台，风流总被，雨打风吹去。
+斜阳草树，寻常巷陌，人道寄奴曾住。
+想当年，金戈铁马，气吞万里如虎。
+
+元嘉草草，封狼居胥，赢得仓皇北顾。
+四十三年，望中犹记，烽火扬州路。
+可堪回首，佛狸祠下，一片神鸦社鼓。
+凭谁问，廉颇老矣，尚能饭否？</div>
+            <div class="poem-remark">此词作于开禧元年（1205），时辛弃疾六十六岁，任镇江知府。</div>
+        </div>
+        
+        <div class="poem">
+            <div class="poem-title">破阵子·为陈同甫赋壮词以寄</div>
+            <div class="poem-content">醉里挑灯看剑，梦回吹角连营。
+八百里分麾下炙，五十弦翻塞外声，沙场秋点兵。
+
+马作的卢飞快，弓如霹雳弦惊。
+了却君王天下事，赢得生前身后名。可怜白发生！</div>
+            <div class="poem-remark">此词是辛弃疾寄给好友陈亮的壮词，充满壮志未酬的悲愤。</div>
+        </div>
+        
+        <div class="poem">
+            <div class="poem-title">青玉案·元夕</div>
+            <div class="poem-content">东风夜放花千树，更吹落，星如雨。
+宝马雕车香满路。
+凤箫声动，玉壶光转，一夜鱼龙舞。
+
+蛾儿雪柳黄金缕，笑语盈盈暗香去。
+众里寻他千百度，蓦然回首，那人却在，灯火阑珊处。</div>
+            <div class="poem-remark">描写元宵佳节的热闹景象，末句更是千古名句。</div>
+        </div>
+        
+        <div class="poem">
+            <div class="poem-title">西江月·夜行黄沙道中</div>
+            <div class="poem-content">明月别枝惊鹊，清风半夜鸣蝉。
+稻花香里说丰年，听取蛙声一片。
+
+七八个星天外，两三点雨山前。
+旧时茅店社林边，路转溪桥忽见。</div>
+            <div class="poem-remark">描写乡村夏夜的美景，充满生活气息。</div>
+        </div>
+        
+        <div class="poem">
+            <div class="poem-title">丑奴儿·书博山道中壁</div>
+            <div class="poem-content">少年不识愁滋味，爱上层楼。
+爱上层楼，为赋新词强说愁。
+
+而今识尽愁滋味，欲说还休。
+欲说还休，却道天凉好个秋。</div>
+            <div class="poem-remark">以"愁"为主题，对比少年与成年后的不同心境。</div>
+        </div>
+        
+        <div class="poem">
+            <div class="poem-title">南乡子·登京口北固亭有怀</div>
+            <div class="poem-content">何处望神州？满眼风光北固楼。
+千古兴亡多少事？悠悠。
+不尽长江滚滚流。
+
+年少万兜鍪，坐断东南战未休。
+天下英雄谁敌手？曹刘。
+生子当如孙仲谋。</div>
+            <div class="poem-remark">借古讽今，表达对南宋朝廷软弱的不满。</div>
+        </div>
+    </div>
+</body>
+</html>
